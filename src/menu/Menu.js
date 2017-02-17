@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import AAA from '../http/aaa';
+import teste from '../CLHttpModule/module';
 
 class Menu extends Component {
   alertOnPage() {
-    AAA.test().then((response)=> console.log(response));
+    console.log(teste)
   };
 
   render() {
