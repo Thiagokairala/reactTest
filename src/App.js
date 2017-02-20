@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Menu from './menu/Menu';
-import { Link } from 'react-router'
+import { Link, IndexLink } from 'react-router'
 
 class App extends Component {
   render() {
@@ -13,9 +12,18 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
+        <ul className="header">
+          <li><IndexLink to="/" activeClassName="teste" >Home</IndexLink></li>
+          <li><Link to="/stuff" activeClassName="teste" >Stuff</Link></li>
+          <li><Link to="/contact" activeClassName="teste" >Contact</Link></li>
+        </ul>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+
+        <div className="content">
+          {this.props.children}
+        </div>
       </div>
     );
   }
